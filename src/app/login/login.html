@@ -1,0 +1,27 @@
+<p>login works!</p>
+
+<form (submit)="onSubmit($event)" class="flex flex-col space-y-4" >
+
+    <input type="email" placeholder="email" [formField]="loginForm.email" />
+    @if(emailError()){
+        <div class="text-red-500">Email is required</div>
+    }
+
+    <input type="password" placeholder="password" [formField]="loginForm.password" />
+    @if(passwordError()){
+        <div class="text-red-500">{{ passwordError()!.message }}</div>
+    }
+    @if(passwordError() && passwordError()!.kind === 'minLength'){
+        <div class="text-red-500">Password must be at least 8 characters</div>
+    }
+
+    <label>
+        <input type="checkbox" [formField]="loginForm.rememberMe" />
+        Remember me
+    </label>
+
+    <button type="submit" class="bg-blue-500 px-4 py-2 rounded-lg text-white">Login</button>
+
+
+    
+</form>

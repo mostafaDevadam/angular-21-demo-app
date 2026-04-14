@@ -1,0 +1,75 @@
+<header class="bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+        <a class="text-lg font-semibold" routerLink="/">MyApp</a>
+
+        <select [value]="selected" (change)="changeLang($event)" class="
+      w-40 appearance-none bg-white border border-gray-300 text-gray-700 py-2 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors duration-200 text-sm sm:text-base cursor-pointer
+       
+    ">
+            @for (item of langs; track $index) {
+            <option value="{{ item }}">{{ item.toUpperCase() }}</option>
+            }
+
+        </select>
+
+        <div className="relative w-full sm:w-48 md:w-64">
+            <select [value]="selected" (change)="changeLang($event)" class="block w-full appearance-none bg-white border
+                border-gray-300 text-gray-700 py-2 rounded-lg leading-tight focus:outline-none focus:bg-white
+                focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors duration-200 text-sm
+                sm:text-base cursor-pointer ">
+                @for (item of langs; track $index) {
+                <option value="{{ item }}">{{ item.toUpperCase() }}</option>
+                }
+
+            </select>
+
+            <div class="pointer-events-none absolute inset-y-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+            </div>
+        </div>
+
+
+
+        <button class="md:hidden p-2" (click)="toggle()" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path [attr.d]="isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </button>
+        <nav class="hidden md:flex space-x-6">
+            <a [routerLink]="['/', currentLang, '/home']" routerLinkActive="active" (click)="isOpen=false"
+                class="hover:underline hover:cursor-pointer">{{ 'navbar.home' | translate }}</a>
+
+
+            <a [routerLink]="['/', currentLang, 'about']" [queryParamsHandling]="'preserve'"
+                class="hover:underline hover:cursor-pointer">{{ 'navbar.about' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'contact']" class="hover:underline hover:cursor-pointer">{{
+                'navbar.contact' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'register']" class="hover:underline hover:cursor-pointer">{{
+                'navbar.register' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'login']" class="hover:underline hover:cursor-pointer">{{ 'navbar.login'
+                | translate }}</a>
+        </nav>
+    </div>
+
+    <!-- Mobile menu -->
+
+    @if(isOpen){
+    <div class="md:hidden bg-slate-800">
+        <nav class="flex flex-col space-y-1 p-4">
+            <a routerLink="/" (click)="isOpen=false" class="py-2">Home</a>
+            <a routerLink="/about" (click)="isOpen=false" class="py-2">About</a>
+            <a routerLink="/contact" (click)="isOpen=false" class="py-2">Contact</a>
+            <a routerLink="/register" (click)="isOpen=false" class="py-2">Register</a>
+            <a routerLink="/login" (click)="isOpen=false" class="py-2">Login</a>
+        </nav>
+    </div>
+    }
+
+    <div>
+
+    </div>
+
+</header>

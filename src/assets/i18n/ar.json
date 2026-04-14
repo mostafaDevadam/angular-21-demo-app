@@ -1,0 +1,14 @@
+{
+  "siteTitle|Main heading": "مرحبًا بك في MyApp",
+  "intro": "مرحبًا، {{ userName }}! لديك {messagesCount, plural, =0 {لا توجد رسائل} one {رسالة واحدة} other { {{messagesCount}} رسائل}}.",
+  "goodMorning": "صباح الخير، {userName}",
+  "hello": "مرحبًا ",
+  "app.title": "عرض الترجمة",
+  "navbar": {
+    "home": "الرئيسية",
+    "about": "حول",
+    "contact": "اتصل بنا",
+    "register": "تسجيل",
+    "login": "تسجيل الدخول"
+  }
+}

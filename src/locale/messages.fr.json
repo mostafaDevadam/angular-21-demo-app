@@ -1,0 +1,5 @@
+{
+  "siteTitle|Main heading": "Bienvenue sur MyApp",
+  "intro|Intro text": "Bonjour, {{ userName }}\u202F! Vous avez {messagesCount, plural, =0 {aucun message} one {1 message} other {{messagesCount} messages}}.",
+  "goodMorning": "Bonjour, {userName}"
+}

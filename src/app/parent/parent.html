@@ -1,0 +1,14 @@
+<p>------------</p>
+<p>parent works!</p>
+
+<app-child 
+[data]="parentData" 
+[requiredData]="requiredValue" 
+(notify)="handleNotify($event)" 
+[(value)]="parentValue"
+[(counter)]="myCount"
+
+
+></app-child>
+
+<div>cm: </div>

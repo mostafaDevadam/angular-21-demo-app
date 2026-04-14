@@ -1,0 +1,14 @@
+{
+  "siteTitle|Main heading": "Bienvenue sur MyApp",
+  "intro": "Bonjour, {{ userName }}\u202F! Vous avez {messagesCount, plural, =0 {aucun message} one {1 message} other { {{messagesCount}} messages}}.",
+  "goodMorning": "Bonjour, {userName}",
+  "hello": "bonjour ",
+  "app.title": "Démonstration de traduction",
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "register": "S'inscrire",
+    "login": "Se connecter"
+  }
+}
