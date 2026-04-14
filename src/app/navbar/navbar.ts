@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterModule, TranslatePipe, TranslateDirective],   // <- add it here
+  imports: [RouterModule, TranslatePipe, /*TranslateDirective*/],   // <- add it here
   templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
