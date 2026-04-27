@@ -1,0 +1,28 @@
+<p>rx works!</p>
+<div>
+    <input type="search" [value]="search()" name="search" id="search" placeholder="search..."  
+    
+    class="border px-4 py-2 rounded-lg"
+    (input)="search.set($any($event.target).value)"
+    
+    
+    >
+</div>
+
+<p>result: {{ result() }}</p>
+
+<div>
+    <input [value]="query()" (input)="query.set($any($event.target).value)" placeholder="Search" class="border px-4 py-2 rounded-lg" />
+    <p>s: {{ results() }}</p>
+    <ul>
+        @for (item of results(); track $index) {
+            <li>{{item}}</li>
+        }
+      
+    </ul>
+    <ul class="border-t mt-10">
+        @for (item of list; track $index) {
+            <li>{{item}}</li>
+        }
+    </ul>
+</div>

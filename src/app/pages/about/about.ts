@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Parent } from '../parent/parent';
+import { Parent } from '../../components/parent/parent';
 
 @Component({
   selector: 'app-about',

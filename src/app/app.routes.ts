@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
-import { Home } from './home/home';
-import { About } from './about/about';
-import { Contact } from './contact/contact';
-import { Register } from './register/register';
-import { Login } from './login/login';
+import { Home } from './pages/home/home';
+import { About } from './pages/about/about';
+import { Contact } from './pages/contact/contact';
+import { Register } from './pages/register/register';
+import { Login } from './pages/login/login';
 import { langGuard } from './lang-guard';
+import { Rx } from './pages/rx/rx';
 
 export const routes: Routes = [
     {
@@ -17,7 +18,8 @@ export const routes: Routes = [
             { path: 'about', component: About },
             { path: 'contact', component: Contact },
             { path: 'register', component: Register },
-            { path: 'login', component: Login }
+            { path: 'login', component: Login },
+            { path: 'rx', component: Rx }
         ]
     },
     { path: '', redirectTo: 'en', pathMatch: 'full' },

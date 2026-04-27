@@ -2,14 +2,7 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
         <a class="text-lg font-semibold" routerLink="/">MyApp</a>
 
-        <div className="relative w-full sm:w-48 md:w-64">
-            <select [value]="selected" (change)="changeLang($event)"
-                class="w-80 border border-white px-4 py-2 rounded-lg bg-white text-black" >
-                @for (item of langs; track $index) {
-                <option value="{{ item }}" class="text-black">{{ item.toUpperCase() }}</option>
-                }
-            </select>
-        </div>
+
         <!--<div className="relative w-full sm:w-48 md:w-64">
             <select [value]="selected" (change)="changeLang($event)" class="block w-full appearance-none bg-white border
                 border-gray-300 py-2 rounded-lg leading-tight focus:outline-none focus:bg-white
@@ -49,19 +42,42 @@
                 'navbar.register' | translate }}</a>
             <a [routerLink]="['/', currentLang, 'login']" class="hover:underline hover:cursor-pointer">{{ 'navbar.login'
                 | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'rx']" class="hover:underline hover:cursor-pointer">RX</a>
+
+
+            <div className="relative w-full sm:hidden md:w-64">
+                <select [value]="selectedLang" (change)="changeLang($event)" id="select-locale"
+                    class="w-80 border border-white px-4 py-2 rounded-lg bg-white text-black">
+                    @for (item of langs; track $index) {
+                    <option value="{{ item }}" class="text-black">{{ item.toUpperCase() }}</option>
+                    }
+                </select>
+            </div>
+
         </nav>
     </div>
 
     <!-- Mobile menu -->
 
     @if(isOpen){
-    <div class="md:hidden bg-slate-800">
-        <nav class="flex flex-col space-y-1 p-4">
-            <a routerLink="/" (click)="isOpen=false" class="py-2">Home</a>
-            <a routerLink="/about" (click)="isOpen=false" class="py-2">About</a>
-            <a routerLink="/contact" (click)="isOpen=false" class="py-2">Contact</a>
-            <a routerLink="/register" (click)="isOpen=false" class="py-2">Register</a>
-            <a routerLink="/login" (click)="isOpen=false" class="py-2">Login</a>
+    <div class="md:hidden bg-slate-800 sm:w-full" id="mobile-menu">
+        <nav class="flex flex-col space-y-1 p-4" >
+            <a [routerLink]="['/', currentLang, '/home']" (click)="isOpen=false" class="py-2">{{ 'navbar.home' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'about']" (click)="isOpen=false" class="py-2">{{ 'navbar.about' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'contact']" (click)="isOpen=false" class="py-2">{{ 'navbar.contact' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'register']" (click)="isOpen=false" class="py-2">{{ 'navbar.register' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'login']" (click)="isOpen=false" class="py-2">{{ 'navbar.login' | translate }}</a>
+            <a [routerLink]="['/', currentLang, 'rx']" (click)="isOpen=false" class="py-2">RX</a>
+
+            <div className="relative w-full sm:w-full ">
+                <select [value]="selectedLang" (change)="changeLang($event)" id="select-mobile-locale"
+                    class="w-full border border-white px-4 py-2 rounded-lg bg-white text-black">
+                    @for (item of langs; track $index) {
+                    <option value="{{ item }}" class="text-black">{{ item.toUpperCase() }}</option>
+                    }
+                </select>
+            </div>
+
         </nav>
     </div>
     }

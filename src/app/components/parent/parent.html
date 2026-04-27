@@ -1,0 +1,35 @@
+<p>------------</p>
+<p>parent works!</p>
+
+<app-child 
+[data]="parentData" 
+[requiredData]="requiredValue" 
+(notify)="handleNotify($event)" 
+[(value)]="parentValue"
+[(counter)]="myCount"
+#childComp
+
+
+></app-child>
+
+<p>------------</p>
+
+<div class="parent-box">
+      <h2>Parent Component</h2>
+      
+      <!-- Child component with template reference variable -->
+     
+
+      <div class="controls flex flex-row gap-5">
+        <button (click)="callChildGreet()" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Call Child greet()</button>
+        <button (click)="focusChildInput()" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Focus Child Input</button>
+        <button (click)="updateChildMessage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Update Child Message</button>
+      </div>
+
+      <div class="status">
+        <p><strong>Child Status:</strong> {{ childStatus() }}</p>
+        <p><strong>Computed from child:</strong> {{ computedGreeting() }}</p>
+      </div>
+    </div>
+
+

@@ -1,0 +1,21 @@
+<p>------------</p>
+
+<p>child works!</p>
+
+<p>Received: {{ data() }}</p>
+<p>model: {{ value() }}</p>
+<button (click)="sendMessage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Notify Parent</button>
+<div class="mt-5"></div>
+<button (click)="increment()" class="bg-blue-500 text-white px-4 py-2 rounded-lg">+1</button>
+<p>counter: {{ counter() }}</p>
+
+<p>------------</p>
+
+<div class="child-box">
+      <h3>Child Component</h3>
+      <p>Message from child: <strong>{{ childMessage() }}</strong></p>
+      
+      <input #childInput type="text" placeholder="Type something..." />
+      <button (click)="updateMessage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Update Message</button>
+    </div>
+
